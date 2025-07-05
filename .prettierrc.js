@@ -38,4 +38,6 @@ export default {
 	vueIndentScriptAndStyle: false,
 	// 换行符使用 lf 结尾是 可选值"<auto|lf|crlf|cr>"
 	endOfLine: 'lf',
+	// 使用 Tailwind CSS 插件
+	plugins: ['prettier-plugin-tailwindcss'],
 };
