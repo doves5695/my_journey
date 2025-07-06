@@ -36,8 +36,8 @@ export default {
 	htmlWhitespaceSensitivity: 'css',
 	// Vue文件脚本和样式标签缩进
 	vueIndentScriptAndStyle: false,
-	// 换行符使用 lf 结尾是 可选值"<auto|lf|crlf|cr>"
-	endOfLine: 'lf',
+	// 换行符使用 auto 自动检测 可选值"<auto|lf|crlf|cr>"
+	endOfLine: 'auto',
 	// 使用 Tailwind CSS 插件
 	plugins: ['prettier-plugin-tailwindcss'],
 };
