@@ -1,4 +1,4 @@
-import Home from '../pages/Home.vue';
+import Home from '../pages/home.vue';
 import NotFound from '../pages/notFound.vue';
 
 export const routes = [
