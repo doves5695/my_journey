@@ -14,7 +14,7 @@ const handleHome = () => {
 
 <template>
 	<header class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">
-		<div class="flex items-center justify-between">
+		<div class="max-w-desktop mx-auto flex items-center justify-between">
 			<h1 @click="handleHome">Header</h1>
 			<div @click="handleLogin">login</div>
 		</div>
