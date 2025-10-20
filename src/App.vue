@@ -13,9 +13,11 @@ const fotGal = computed(() => globalStore.fotGal);
 </script>
 
 <template>
-	<Header />
-	<RouterView />
-	<Footer />
+	<section class="h-full relative">
+		<Header />
+		<RouterView />
+		<Footer />
+	</section>
 </template>
 
 <style scoped></style>

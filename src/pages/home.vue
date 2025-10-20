@@ -1,8 +1,10 @@
-<script setup></script>
+<script setup>
+import bg from '../assets/main/bg.png'
+</script>
 
 <template>
-	<div>
-		<h1>Home</h1>
+	<div class="relative aspect-[3/2] w-full h-[650px] overflow-hidden">
+		<img class="absolute w-full h-full object-cover" :src="bg" alt="">
 	</div>
 </template>
 
