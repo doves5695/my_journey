@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
+const { customStyles } = require('./tailwind-plugins')
+
 export default {
 	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
 	theme: {
@@ -13,5 +15,7 @@ export default {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		customStyles
+	],
 };

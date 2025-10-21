@@ -2,9 +2,8 @@ import { defineStore } from 'pinia';
 import { ref } from 'vue';
 
 export const useGlobalStore = defineStore('globalStore', () => {
-	const fotGal = ref(1111);
-
+	const nav_status = ref('home');
 	return {
-		fotGal,
+		nav_status,
 	};
 });

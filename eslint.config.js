@@ -10,6 +10,12 @@ export default [
 		languageOptions: {
 			globals: { ...globals.browser, ...globals.node },
 		},
+		rules: {
+			// 添加缩进规则配置
+			'indent`': ['error', 'tab'], // 使用 tab 缩进
+			// 或者使用空格：
+			// 'indent': ['error', 2] // 使用 2 个空格
+		},
 	},
 	{
 		files: ['**/*.vue'],
