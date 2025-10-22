@@ -1,6 +1,7 @@
 import Home from '../pages/home.vue';
 import NotFound from '../pages/notFound.vue';
 import Login from '../pages/login.vue';
+import Info from '../pages/info.vue';
 
 export const routes = [
 	{
@@ -12,6 +13,11 @@ export const routes = [
 		path: '/login',
 		name: 'login',
 		component: Login,
+	},
+	{
+		path: '/info',
+		name: 'info',
+		component: Info,
 	},
 	{
 		path: '/:pathMatch(.*)*',
