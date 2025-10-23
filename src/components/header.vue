@@ -1,5 +1,4 @@
 <script setup>
-import { fa, tr } from 'element-plus/es/locales.mjs';
 import { ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -15,8 +14,8 @@ watch(router.currentRoute, () => {
 
 <template>
 	<header
-		class="sticky flex items-center justify-center h-14 top-0 bg-[rgb(245,245,245)] px-4 lg:py-1 text-white z-50 shadow-lg">
-		<nav class="flex items-center justify-between max-w-desktop w-full mx-auto">
+		class="sticky flex items-center justify-center h-14 top-0 bg-[rgb(245,245,245)] px-4 text-white z-50 shadow-lg">
+		<nav class="flex items-center justify-between max-w-desktop w-full mx-auto lg:px-2">
 			<div class="logo flex lg:flex-1" @click="router.push('/')">
 				<div class="flex items-center cursor-pointer">
 					<i class="hidden lg:block iconfont icon-blog-copy text-gray-800 text-[56px] leading-[56px]" />

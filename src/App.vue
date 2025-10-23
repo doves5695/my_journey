@@ -16,7 +16,8 @@ const fotGal = computed(() => globalStore.fotGal);
 	<section class="h-full relative">
 		<Header />
 		<RouterView />
-		<!-- <Footer /> -->
+		<Footer />
+		<!-- 规范严谨，精益求精 -->
 	</section>
 </template>
 
