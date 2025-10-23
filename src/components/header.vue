@@ -19,7 +19,7 @@ watch(router.currentRoute, () => {
 		<nav class="flex items-center justify-between max-w-desktop w-full mx-auto">
 			<div class="logo flex lg:flex-1" @click="router.push('/')">
 				<div class="flex items-center cursor-pointer">
-					<i class="hidden lg:block iconfont icon-blog-copy text-gray-800" style="font-size: 60px;" />
+					<i class="hidden lg:block iconfont icon-blog-copy text-gray-800 text-[56px] leading-[56px]" />
 					<span class="text-gray-800 text-lg lg:text-xl lg:ml-6">FrontEnd Journey</span>
 				</div>
 			</div>
