@@ -29,7 +29,7 @@ watch(router.currentRoute, () => {
 					首页
 				</router-link>
 				<router-link class="h-14 flex_center border-b-4 duration-300  transition-all"
-					:class="[$route.path === '/login' ? 'border-[#96cc80]' : 'border-transparent']" to="/login">
+					:class="[$route.path === '/knowledge' ? 'border-[#96cc80]' : 'border-transparent']" to="/knowledge">
 					<i class="iconfont icon-zhishidian mr-2" />
 					知识点
 				</router-link>
@@ -62,8 +62,8 @@ watch(router.currentRoute, () => {
 						<i class="iconfont icon-shouye" />
 						首页
 					</router-link>
-					<router-link to="/login" class="text-sm py-2 px-3 flex items-center gap-3"
-						:class="[$route.path === '/login' ? 'text-[#96cc80]' : 'text-black']">
+					<router-link to="/knowledge" class="text-sm py-2 px-3 flex items-center gap-3"
+						:class="[$route.path === '/knowledge' ? 'text-[#96cc80]' : 'text-black']">
 						<i class="iconfont icon-zhishidian" />
 						知识点
 					</router-link>
