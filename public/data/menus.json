@@ -1,0 +1,46 @@
+{
+    "menus": [
+        {
+            "key": "sub1",
+            "label": "导语",
+            "children": [
+                { "key": "1", "label": "导语" }
+            ]
+        },
+        {
+            "key": "sub2",
+            "label": "JavaScript/ES6/TypeScript",
+            "children": [
+                { "key": "1", "label": "JavaScript" },
+                { "key": "2", "label": "ES6" },
+                { "key": "3", "label": "TypeScript" }
+            ]
+        },
+        {
+            "key": "sub3",
+            "label": "HTML&CSS",
+            "children": [
+                { "key": "1", "label": "HTML" },
+                { "key": "2", "label": "CSS" }
+            ]
+        },
+        {
+            "key": "sub4",
+            "label": "计算机网络",
+            "children": [
+                { "key": "1", "label": "HTTP协议" },
+                { "key": "2", "label": "TCP/IP协议" },
+                { "key": "3", "label": "网络安全" },
+                { "key": "4", "label": "其他" }
+            ]
+        },
+        {
+            "key": "sub5",
+            "label": "前端框架",
+            "children": [
+                { "key": "1", "label": "React" },
+                { "key": "2", "label": "Vue" }
+            ]
+        }
+    ]
+}

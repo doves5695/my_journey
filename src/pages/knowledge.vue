@@ -1,5 +1,10 @@
 <script setup>
-import { h, reactive, ref } from 'vue';
+import { h, onMounted, reactive, ref } from 'vue';
+
+
+const items = ref([]);
+const isLoading = ref(true);
+const error = ref(null);
 
 const state = reactive({
 	rootSubmenuKeys: ['sub1', 'sub2', 'sub3', 'sub4', 'sub5'],
@@ -17,36 +22,49 @@ const getItem = (label, key, icon, children, type) => (
 	}
 )
 
-const items = reactive([
-	getItem('导语', 'sub1', () => h(), [
-		getItem('导语', '1'),
-	]),
-	getItem('JavaScript/ES6/TypeScript', 'sub2', () => h(), [
-		getItem('JavaScript', '5'),
-		getItem('ES6', '6'),
-		getItem('TypeScript', '7'),
-	]),
-	getItem('HTML&CSS', 'sub3', () => h(), [
-		getItem('HTML', '9'),
-		getItem('CSS', '10'),
-	]),
-	getItem('计算机网络', 'sub4', () => h(), [
-		getItem('HTTP协议', '11'),
-		getItem('TCP/IP协议', '12'),
-		getItem('网络安全', '13'),
-		getItem('其他', '14'),
-	]),
-	getItem('前端框架', 'sub5', () => h(), [
-		getItem('React', '15'),
-		getItem('Vue', '16'),
-	]),
-]);
+// 递归转换菜单数据
+const transformMenuData = (menuData) => {
+  return menuData.map(item => {
+    const children = item.children ? transformMenuData(item.children) : undefined;
+    return getItem(item.label, item.key, () => h(), children);
+  });
+};
+
+const fetchMenuData = async () => {
+	try {
+		isLoading.value = true;
+		error.value = null;
+
+		const response = await fetch('/public/data/menus.json');
+
+
+		if (!response.ok) {
+			throw new Error(`HTTP error! status: ${response.status}`);
+		}
+
+		const data = await response.json();
+
+		items.value = transformMenuData(data.menus);
+
+		state.rootSubmenuKeys = data.menus.map(menu => menu.key);
+
+	} catch (err) {
+		error.value = `加载菜单数据失败: ${err.message}`;
+	} finally {
+		isLoading.value = false;
+	}
+}
+
 
 const handleClick = e => {
 	console.log('click', e);
 };
 
 const renderTitle = ref('Default size card111')
+
+onMounted(async () => {
+	await fetchMenuData();
+})
 
 </script>
 
@@ -57,7 +75,10 @@ const renderTitle = ref('Default size card111')
 				:open-keys="state.openKeys" :items="items" @click="handleClick"></a-menu>
 		</div>
 		<div class="w-[calc(100%-240px)] overflow-auto">
-			<a-card :title="renderTitle" style="height: 100%;">
+			<a-card style="height: 100%;">
+				<template #title>
+					<span class="font-bold bg-gradient-to-r bg-clip-text from-blue-400 to-orange-400 text-transparent">{{ renderTitle }}</span>
+				</template>
 				<p>card content</p>
 				<p>card content</p>
 				<p>card content</p>

@@ -34,7 +34,7 @@ import { footerImg } from '../image';
 					<div class="col-span-1 flex flex-col gap-2">
 						<h1 class="font-semibold text-xl">社交软件</h1>
 						<p>github: <a class="hover:text-blue-400" target="_blank" href="https://github.com/doves5695">https://github.com/doves5695</a></p>
-						<p>简历: <a class="hover:text-blue-400" href="/src/assets/CV.pdf" download="荆瑞的简历.pdf">点击下载我的简历</a></p>
+						<p>简历: <a class="hover:text-blue-400" href="/public/CV.pdf" download="荆瑞的简历.pdf">点击下载我的简历</a></p>
 					</div>
 				</div>
 			</div>
