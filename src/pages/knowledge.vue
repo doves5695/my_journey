@@ -1,10 +1,12 @@
 <script setup>
+import { da } from 'element-plus/es/locales.mjs';
 import { h, onMounted, reactive, ref } from 'vue';
 
 
 const items = ref([]);
 const isLoading = ref(true);
 const error = ref(null);
+const menuData = ref([]); 
 
 const state = reactive({
 	rootSubmenuKeys: ['sub1', 'sub2', 'sub3', 'sub4', 'sub5'],
@@ -12,23 +14,24 @@ const state = reactive({
 	selectedKeys: [],
 });
 
-const getItem = (label, key, icon, children, type) => (
+const getItem = (label, key, children) => (
 	{
-		key,
-		icon,
-		children,
 		label,
-		type,
+		key,
+		children,
 	}
 )
+const renderTitle = ref('')
+
 
 // 递归转换菜单数据
 const transformMenuData = (menuData) => {
-  return menuData.map(item => {
-    const children = item.children ? transformMenuData(item.children) : undefined;
-    return getItem(item.label, item.key, () => h(), children);
-  });
+	return menuData.map(item => {
+		const children = item.children ? transformMenuData(item.children) : undefined;
+		return getItem(item.label, item.key, children);
+	});
 };
+
 
 const fetchMenuData = async () => {
 	try {
@@ -44,6 +47,10 @@ const fetchMenuData = async () => {
 
 		const data = await response.json();
 
+		menuData.value = data.menus;
+
+		renderTitle.value = getTitle(data.menus)
+
 		items.value = transformMenuData(data.menus);
 
 		state.rootSubmenuKeys = data.menus.map(menu => menu.key);
@@ -56,14 +63,28 @@ const fetchMenuData = async () => {
 }
 
 
+const getTitle = (data, key) => {
+	for (const item of data) {
+		if (item.key === key) {
+			renderTitle.value =  item.title || item.label;
+		}
+		if (item.children) {
+			const title = getTitle(item.children, key);
+			if (title) {
+				renderTitle.value = title;
+			}
+		}
+	}
+}
+
 const handleClick = e => {
-	console.log('click', e);
+	getTitle(menuData.value, e.key)
 };
 
-const renderTitle = ref('Default size card111')
 
 onMounted(async () => {
 	await fetchMenuData();
+	getTitle(menuData.value, '1')
 })
 
 </script>
@@ -77,7 +98,9 @@ onMounted(async () => {
 		<div class="w-[calc(100%-240px)] overflow-auto">
 			<a-card style="height: 100%;">
 				<template #title>
-					<span class="font-bold bg-gradient-to-r bg-clip-text from-blue-400 to-orange-400 text-transparent">{{ renderTitle }}</span>
+					<span
+						class="font-bold bg-gradient-to-r bg-clip-text from-blue-400 to-orange-400 text-transparent">{{
+							renderTitle }}</span>
 				</template>
 				<p>card content</p>
 				<p>card content</p>

@@ -4,42 +4,54 @@
             "key": "sub1",
             "label": "导语",
             "children": [
-                { "key": "1", "label": "导语" }
+                { "key": "1", "label": "导语", "title": "导语" }
             ]
         },
         {
             "key": "sub2",
             "label": "JavaScript/ES6/TypeScript",
             "children": [
-                { "key": "1", "label": "JavaScript" },
-                { "key": "2", "label": "ES6" },
-                { "key": "3", "label": "TypeScript" }
+                { "key": "2", "label": "JavaScript", 
+                "children": [
+                    { "key": "2_1", "label": "事件循环机制", "title": "事件循环机制" },
+                    { "key": "2_2", "label": "宏任务与微任务", "title": "宏任务与微任务" },
+                    { "key": "2_3", "label": "setTimeout产生误差的原因", "title": "setTimeout产生误差的原因" },
+                    { "key": "2_4", "label": "如何判断数据类型", "title": "如何判断数据类型" },
+                    { "key": "2_5", "label": "如何判断数据类型", "title": "如何判断数据类型" },
+                    { "key": "2_6", "label": "Array常见的方法", "title": "Array常见的方法"},
+                    { "key": "2_7", "label": "String常见的方法", "title": "String常见的方法" },
+                    { "key": "2_8", "label": "Object常见的方法", "title": "Object常见的方法" },   
+                    { "key": "2_9", "label": "map和reduce方法", "title": "map和reduce方法" },
+                    { "key": "2_10", "label": "浏览器输入URL过程", "title": "浏览器输入URL过程" }
+                ] },
+                { "key": "3", "label": "ES6" },
+                { "key": "4", "label": "TypeScript" }
             ]
         },
         {
             "key": "sub3",
             "label": "HTML&CSS",
             "children": [
-                { "key": "1", "label": "HTML" },
-                { "key": "2", "label": "CSS" }
+                { "key": "5", "label": "HTML" },
+                { "key": "6", "label": "CSS" }
             ]
         },
         {
             "key": "sub4",
             "label": "计算机网络",
             "children": [
-                { "key": "1", "label": "HTTP协议" },
-                { "key": "2", "label": "TCP/IP协议" },
-                { "key": "3", "label": "网络安全" },
-                { "key": "4", "label": "其他" }
+                { "key": "7", "label": "HTTP协议" },
+                { "key": "8", "label": "TCP/IP协议" },
+                { "key": "9", "label": "网络安全" },
+                { "key": "10", "label": "其他" }
             ]
         },
         {
             "key": "sub5",
             "label": "前端框架",
             "children": [
-                { "key": "1", "label": "React" },
-                { "key": "2", "label": "Vue" }
+                { "key": "11", "label": "React" },
+                { "key": "12", "label": "Vue" }
             ]
         }
     ]
