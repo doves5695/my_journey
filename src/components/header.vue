@@ -36,7 +36,10 @@ watch(router.currentRoute, () => {
 			</div>
 			<div class="flex h-7 items-center flex-1 justify-end">
 				<div class="cursor-pointer">
-					<p class="text-gray-400 hover:text-black duration-300 lg:block hidden">登录</p>
+					<!-- <p class="text-gray-400 hover:text-black duration-300 lg:block hidden">登录</p> -->
+					<router-link to="/info" class="text-gray-400 hover:text-black duration-300 lg:block hidden">
+						我的个人信息
+					</router-link>
 					<div class="lg:hidden w-5 h-3.5 overflow-hidden flex flex-col gap-1" @click="showMenu = true">
 						<span class="w-5 h-0.5 bg-gray-400" :class="{ '': showMenu }"></span>
 						<span class="w-5 h-0.5 bg-gray-400"
